@@ -1,0 +1,31 @@
+{
+  "name": "mazzgames",
+  "version": "1.0.0",
+  "description": "GamesMod – Mode Gaming en tray",
+  "author": "Mazz",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.mazz.gamesmod",
+    "productName": "GamesMod",
+    "asar": true,
+    "files": [
+      "**/*"
+    ],
+    "extraResources": [
+      { "from": "GamesOn.bat",  "to": "GamesOn.bat" },
+      { "from": "GamesOff.bat", "to": "GamesOff.bat" }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "icon": "icon.png"
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
